@@ -18,3 +18,4 @@ set(EXECUTABLE_OUTPUT_PATH "./solutions")
 
 add_executable(001_cpp problems/001.cpp)
 add_executable(002_cpp problems/002.cpp)
+add_executable(003_cpp problems/003.cpp)
