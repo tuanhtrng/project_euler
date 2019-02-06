@@ -15,7 +15,7 @@ auto main() -> int
         
         for ( auto prime : primes )
         {
-            if ( odd_number % prime == 0 )
+            if ( odd_number%prime == 0 )
             {
                 is_prime = false;
             }
@@ -26,7 +26,7 @@ auto main() -> int
             auto prime = odd_number;
             primes.emplace_back(prime);
 
-            if ( number % prime == 0 )
+            if ( number%prime == 0 )
             {
                 prime_factors.emplace_back(prime);
                 number /= prime;
