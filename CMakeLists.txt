@@ -16,6 +16,5 @@ message(STATUS "Building with the following flags: ${CMAKE_CXX_FLAGS}")
 
 set(EXECUTABLE_OUTPUT_PATH "./solutions")
 
-add_executable(001a_cpp problems/001a.cpp)
-add_executable(001b_cpp problems/001b.cpp)
-add_executable(002a_cpp problems/002a.cpp)
+add_executable(001_cpp problems/001.cpp)
+add_executable(002_cpp problems/002.cpp)
