@@ -3,33 +3,24 @@
 
 auto main() -> int
 {
-    auto number = (unsigned long long){600851475143};
-    auto primes = std::vector{3};
-    auto prime_factors = std::vector{1};
-    auto odd_number = int{0};
+    auto number = 600851475143;
+    auto primes = std::vector<decltype(number)>{3};
+    auto prime_factors = std::vector<decltype(number)>{1};
 
-    for ( auto i = std::size_t{2}; i <= (number + 1)/2; ++i)
+    for ( auto i = std::size_t{2}; (2*i - 1) <= number; ++i)
     {
-        auto is_prime = true;
-        odd_number = 2*i - 1;
-        
         for ( auto prime : primes )
         {
-            if ( odd_number%prime == 0 )
+            if ( (2*i - 1)%prime != 0 )
             {
-                is_prime = false;
-            }
-        }
-        
-        if (is_prime)
-        {
-            auto prime = odd_number;
-            primes.emplace_back(prime);
+                auto prime = 2*i - 1;
+                primes.emplace_back(prime);
 
-            if ( number%prime == 0 )
-            {
-                prime_factors.emplace_back(prime);
-                number /= prime;
+                if ( number%prime == 0 )
+                {
+                    prime_factors.emplace_back(prime);
+                    number /= prime;
+                }            
             }
         }
     }
