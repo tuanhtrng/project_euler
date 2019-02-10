@@ -2,16 +2,16 @@
 
 auto main() -> int
 {
-    auto fibonacci = int{2};
-    auto fibonacci_next = int{8};
-    auto sum = int{fibonacci};
+    auto even_fibonacci_prv = int{2};
+    auto even_fibonacci_cur = int{8};
+    auto sum = int{even_fibonacci_prv};
 
-    while (fibonacci_next <= 4000000)
+    while (even_fibonacci_cur <= 4000000)
     {
-        sum += fibonacci_next;
-        auto tmp = fibonacci;
-        fibonacci = fibonacci_next;
-        fibonacci_next = 4*fibonacci_next + tmp;
+        sum += even_fibonacci_cur;
+        auto tmp = even_fibonacci_prv;
+        even_fibonacci_prv = even_fibonacci_cur;
+        even_fibonacci_cur = 4*even_fibonacci_cur + tmp;
     }
     std::cout << sum << "\n";
     return 0;
